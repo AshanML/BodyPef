@@ -3,8 +3,7 @@ import joblib
 import pandas as pd
 import numpy as np
 
-# Load the trained models
-rf_model = joblib.load('RFmodel.joblib')
+# Load the trained model
 gb_model = joblib.load('GBmodel.joblib')
 
 # Define class labels mapping
@@ -30,11 +29,11 @@ def render_prediction_page():
 
     # Use a form to force rendering of the model selection radio button
     with st.form("model_selection_form"):
-        model_choice = st.radio("Select Model", ["Random Forest", "Gradient Boosting"])
+        model_choice = st.radio("Select Model", ["Gradient Boosting"])
         submit_button = st.form_submit_button(label="Submit")
 
     # Determine the selected model
-    model = rf_model if model_choice == "Random Forest" else gb_model
+    model = rf_model if model_choice ==  gb_model
 
     # Make predictions
     if submit_button:
