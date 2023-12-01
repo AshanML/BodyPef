@@ -33,7 +33,7 @@ def render_prediction_page():
         submit_button = st.form_submit_button(label="Submit")
 
     # Determine the selected model
-    model = rf_model if model_choice ==  gb_model
+    model = gb_model
 
     # Make predictions
     if submit_button:
